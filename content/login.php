@@ -16,6 +16,8 @@
 
 
 <body>
+
+
     <div class="container px-4 py-5 mx-auto">
         <div class="card card0">
             <div class="grupo d-flex flex-lg-row flex-column-reverse">
@@ -26,20 +28,43 @@
                             <h3 class="mb-5 text-center heading">La cochera</h3>
                             <h6 class="msg-info">Por favor, logeate con tu cuenta</h6>
                             <!-- <h3 class="msg-info">LOGIN</h3> -->
-                            <div class="form-group"> <label class="form-control-label text-muted">Usuario</label> <input type="text" id="email" name="email" placeholder="Nombre de Usuario" class="form-control"> </div>
-                            <div class="form-group"> <label class="form-control-label text-muted">Contraseña</label> <input type="password" id="psw" name="psw" placeholder="Contraseña" class="form-control"> </div>
-                            <div class="row justify-content-center my-3 px-3"> <button class="btn-block btn-color">Login</button> </div>
-                            <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">¿Has olvidado tu contraseña?</small></a> </div>
+
+                            <div class="form-group"> 
+                                <label class="form-control-label text-muted">Usuario</label> 
+                                <input type="text" id="usuario" placeholder="Nombre de Usuario" class="form-control"> 
+                            </div>
+
+                            <div class="form-group"> 
+                                <label class="form-control-label text-muted">Contraseña</label> 
+                                <input type="password" id="pass" placeholder="Contraseña" class="form-control"> 
+                            </div>
+
+                            <div class="row justify-content-center my-3 px-3"> 
+                                <button class="btn-block btn-color" id="login">Login</button> 
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="card card2">
                     <div class="my-auto mx-md-5 px-md-5 right text-center">
                         <div class="row justify-content-center mb-3"> <img id="logo" src="dist\img\astroboss.png"> </div>
-                        <h5 style="color: #264653" ;>CONCESIONARIO Y REPARACIONES</h5><small style="color: #2A9D8F" ;>DESDE 1990</small>
+                        <h5 style="color: #264653">CONCESIONARIO Y REPARACIONES</h5><small style="color: #2A9D8F">DESDE 1990</small>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+
+    <!-- jQuery -->
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/dist/js/login.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            Login.init();
+        });    
+    </script>
+
 </body>
