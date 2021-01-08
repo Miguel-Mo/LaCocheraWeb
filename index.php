@@ -6,4 +6,7 @@ include "_share/header.php"; ?>
         <?php include "_share/topbar.php" ?>
         <?php include "_share/sidebar.php" ?>
     </div>
+
+    <?php include "_share/script.php" ?>
 </body>
+</html>
