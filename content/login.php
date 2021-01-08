@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="main.css">
-    <title>Itinerarium</title>
+    <link rel="stylesheet" href="/dist/css/login.css">
+    <title>La Cochera</title>
 </head>
 
 
@@ -35,7 +35,7 @@
                 </div>
                 <div class="card card2">
                     <div class="my-auto mx-md-5 px-md-5 right text-center">
-                        <div class="row justify-content-center mb-3"> <img id="logo" src="astroboss.png"> </div>
+                        <div class="row justify-content-center mb-3"> <img id="logo" src="dist\img\astroboss.png"> </div>
                         <h5 style="color: #264653" ;>CONCESIONARIO Y REPARACIONES</h5><small style="color: #2A9D8F" ;>DESDE 1990</small>
                     </div>
                 </div>
