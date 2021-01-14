@@ -2,7 +2,6 @@
     display: none;
 }
 
-
 body {
     color: #000;
     font-family: 'Montserrat', sans-serif;
@@ -12,22 +11,20 @@ body {
     background-repeat: no-repeat
 }
 
-input,
-textarea {
+input, textarea {
     background-color: #F3E5F5;
     border-radius: 50px !important;
     padding: 12px 15px 12px 15px !important;
     width: 100%;
     box-sizing: border-box;
     border: none !important;
-    border: 1px solid #F3E5F5 !important;
+    border: 1px solid #9D9D9D !important;
     font-size: 16px !important;
     color: #000 !important;
     font-weight: 400
 }
 
-input:focus,
-textarea:focus {
+input:focus, textarea:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -53,15 +50,14 @@ button:focus {
 }
 
 .grupo {
-    -webkit-box-shadow: 0px 2px 5px 7px rgba(136,136,136,0.31);
-    -moz-box-shadow: 0px 2px 5px 7px rgba(136,136,136,0.31);
-    box-shadow: 0px 2px 5px 7px rgba(136,136,136,0.31);
+    -webkit-box-shadow: 0px 2px 5px 7px rgba(136, 136, 136, 0.31);
+    -moz-box-shadow: 0px 2px 5px 7px rgba(136, 136, 136, 0.31);
+    box-shadow: 0px 2px 5px 7px rgba(136, 136, 136, 0.31);
 }
 
 .card1 {
     width: 50%;
     padding: 40px 30px 10px 30px;
-
 }
 
 .card2 {
@@ -78,19 +74,6 @@ button:focus {
 
 .heading {
     margin-bottom: 60px !important
-}
-
-::placeholder {
-    color: #000 !important;
-    opacity: 1
-}
-
-:-ms-input-placeholder {
-    color: #000 !important
-}
-
-::-ms-input-placeholder {
-    color: #000 !important
 }
 
 .form-control-label {
@@ -154,11 +137,9 @@ a:hover {
         width: 100%;
         padding: 40px 30px 10px 30px
     }
-
     .card2 {
         width: 100%
     }
-
     .right {
         margin-top: 100px !important;
         margin-bottom: 100px !important
@@ -169,11 +150,9 @@ a:hover {
     .container {
         padding: 10px !important
     }
-
     .card2 {
         padding: 50px
     }
-
     .right {
         margin-top: 50px !important;
         margin-bottom: 50px !important
