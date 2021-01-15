@@ -17,46 +17,33 @@
             </div>
         </div>
 
-        <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
                 <li class="nav-item <?= $actual === 'dashboard' ? 'menu-open' : '' ?>">
-                    <a href="pages/gallery.html" class="nav-link">
+                    <a href="\content\dashboard.php" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboards
-                        </p>
+                        <p>Dashboards</p>
                     </a>
                 </li>
                 <li class="nav-item <?= $actual === 'ventas' ? 'menu-open' : '' ?>">
-                    <a href="content\ventas.php" class="nav-link">
+                    <a href="\content\ventas.php" class="nav-link">
                         <i class="nav-icon fas fa-dollar-sign"></i>
-                        <p>
-                            Ventas
-                        </p>
+                        <p>Ventas</p>
                     </a>
                 </li>
                 <li class="nav-item <?= $actual === 'vehiculos' ? 'menu-open' : '' ?>">
-                    <a href="pages/gallery.html" class="nav-link">
+                    <a href="\content\vehiculos.php" class="nav-link">
                         <i class="nav-icon fas fa-car"></i>
-                        <p>
-                            Vehículos
-                        </p>
+                        <p>Vehículos</p>
                     </a>
                 </li>
                 <li class="nav-item <?= $actual === 'empleados' ? 'menu-open' : '' ?>">
-                    <a href="pages/gallery.html" class="nav-link">
+                    <a href="\content\empleados.php" class="nav-link">
                         <i class="nav-icon fas fa-user-astronaut"></i>
-                        <p>
-                            Empleados
-                        </p>
+                        <p>Empleados</p>
                     </a>
                 </li>
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>
