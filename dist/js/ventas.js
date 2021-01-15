@@ -172,6 +172,8 @@ var VentasDatatable = function () {
                             .draw();
 
                     }
+
+                    _recalcularBalance();
                 });
 
                 return;
@@ -187,22 +189,24 @@ var VentasDatatable = function () {
                         .search(this.value)
                         .draw();
                 }
-
-                let balance=0;
-
-                $("table tbody tr").each(function(index ,fila){
-                    
-                    if( $(fila).find("td:eq(5)").text()==="Aceptada"){
-                        let valor=$(fila).find("td:eq(3)").text().split(" ")[0];
-                        balance+=Number(valor);
-                    }
-
-                })
-                $("#Balance").text(balance + "€");
+                _recalcularBalance();
             });
 
         });
 
+    }
+
+    const _recalcularBalance = function () {
+        let balance=0;
+        $("table tbody tr").each(function(index ,fila){
+                    
+            if( $(fila).find("td:eq(5)").text()==="Aceptada"){
+                let valor=$(fila).find("td:eq(3)").text().split(" ")[0];
+                balance+=Number(valor);
+            }
+
+        })
+        $("#Balance").text(balance + "€");
     }
 
     return {
