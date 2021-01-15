@@ -62,6 +62,10 @@
         </div>
     </div>
 
+    <!-- Modales -->
+    <?php include "./modales/detallesPropuestaVenta.php" ?>
+
+    <!-- Script generales -->
     <?php include "../_share/script.php" ?>
 
     <!-- DataTables  & Plugins -->
@@ -78,8 +82,7 @@
     <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-
-    <!-- Page specific script -->
+    <!-- Script página -->
     <script src="../dist/js/ventas.js"></script>
     <script>
         jQuery(document).ready(() => {

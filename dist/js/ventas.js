@@ -98,7 +98,8 @@ var VentasDatatable = function () {
             order: false,
             className: 'dt-center',
             render: function (data, type, row, meta) {
-                return `<button type="button" data-id=${data} class="btn btn-success modal-ventas"><i class="fa fa-search"></i></button>`;
+                return `<button type="button" data-toggle="modal" data-target="#staticBackdrop" 
+                    data-id=${data} class="btn btn-success modal-ventas"><i class="fa fa-search"></i></button>`;
             }
         }
         ];
