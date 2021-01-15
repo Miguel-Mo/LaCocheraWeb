@@ -46,6 +46,7 @@ var VentasDatatable = function () {
                 info: "Mostrando página _PAGE_ de _PAGES_",
                 infoEmpty: "No se han encontrado datos",
                 infoFiltered: "(filtrados de _MAX_ resultados totales)",
+                search:"Buscar:",
                 paginate: {
                     first:      "Primera",
                     last:       "Última",
