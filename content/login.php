@@ -3,8 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap v5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- fonts -->
     <script src="https://kit.fontawesome.com/11ee0df9aa.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -38,11 +45,11 @@
 
                                 <div class="form-group">
                                     <label class="form-control-label text-muted">Contraseña</label>
-                                    <input type="password" id="pass" placeholder="Contraseña" class="form-control">
+                                    <input type="password" id="pass" placeholder="Contraseña" class="form-control" required>
                                 </div>
 
                                 <div class="row justify-content-center my-3 px-3">
-                                    <button class="btn-block btn-color" id="login">Login</button>
+                                    <button class="btn-block btn-color" id="login" required>Login</button>
                                 </div>
                             </form>
                         </div>

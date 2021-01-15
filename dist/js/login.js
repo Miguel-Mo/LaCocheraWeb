@@ -16,7 +16,17 @@ var Login = function () {
                     console.log(response);
                 },
                 error: function(request,erroType,errorMessage) {
-                    alert("EY")
+
+                    if (errorMessage === 'timeout')
+                        errorMessage = 'Problema al conectar con la API'
+
+                    Swal.fire({
+                        title: '¡Error!',
+                        text: errorMessage,
+                        icon: 'error',
+                        confirmButtonText: 'De acuerdo',
+                        confirmButtonColor: '#2A9D8F' 
+                    })
                 },
                 timeout: 3000
             });
