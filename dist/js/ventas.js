@@ -138,7 +138,15 @@ var VentasDatatable = function () {
 
     const _initFilter = function (table) {
 
-        $('#listado thead tr').clone(true).appendTo('#listado thead');
+        $('#listado thead').append(
+        '<tr>\
+            <th></th>\
+            <th></th>\
+            <th></th>\
+            <th></th>\
+            <th></th>\
+            <th></th>\
+        </tr>');
 
         $('#listado thead tr:eq(1) th').each(function (i) {
 
