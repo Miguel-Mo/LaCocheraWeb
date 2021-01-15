@@ -55,7 +55,7 @@ var VentasDatatable = function () {
             }
         });
 
-        table.buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)');
+        table.buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)')
 
         _initFilter(table);
     }
@@ -98,9 +98,46 @@ var VentasDatatable = function () {
     const _initFilter = function (table) {
 
         $('#listado thead tr').clone(true).appendTo('#listado thead');
+
         $('#listado thead tr:eq(1) th').each(function (i) {
+
+            if (i == 6) {
+                $(this).html('');
+                return;
+            }
+
+            if (i == 5) {
+
+                $(this).html('\
+                <select class="form-control">\
+                    <option value="Todo">Todo</option>\
+                    <option value="Aceptada">Aceptada</option>\
+                    <option value="Rechazada">Rechazada</option>\
+                    <option value="Pendiente">Pendiente</option>\
+                </select>');
+
+                $('select', this).on('change', function () {
+
+                    if (this.value === 'Todo') {
+
+                        table.column(i)
+                            .search('')
+                            .draw();
+
+                    } else if (table.column(i).search() !== this.value) {
+
+                        table.column(i)
+                            .search(this.value)
+                            .draw();
+
+                    }
+                });
+
+                return;
+            }
+
             var title = $(this).text();
-            $(this).html('<input type="text" placeholder="Buscar ' + title + '" />');
+            $(this).html('<input class="form-control input-sm" type="text" placeholder="Buscar ' + title + '" />');
 
             $('input', this).on('keyup change', function () {
                 if (table.column(i).search() !== this.value) {
@@ -110,6 +147,7 @@ var VentasDatatable = function () {
                         .draw();
                 }
             });
+
         });
 
     }
