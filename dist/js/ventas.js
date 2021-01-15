@@ -6,7 +6,6 @@ var VentasDatatable = function () {
             url: "http://localhost:1498/propuestaventa",
             dataType: "JSON",
             success: function (response) {
-                console.log(response);
 
                 const dataSet = new Array;
                 let balance = 0;
@@ -30,7 +29,7 @@ var VentasDatatable = function () {
 
                 $("#Balance").text(balance + " €");
                 _initDatatable(dataSet);
-
+                _controlModal();
             }
         });
     }
@@ -61,39 +60,6 @@ var VentasDatatable = function () {
                     previous: "Anterior"
                 },
             },
-            // footerCallback: function ( row, data, start, end, display ) {
-            //     var api = this.api(), data;
-     
-            //     // Remove the formatting to get integer data for summation
-            //     var intVal = function ( i ) {
-            //         return typeof i === 'string' ?
-            //             i.replace(/[\$,]/g, '')*1 :
-            //             typeof i === 'number' ?
-            //                 i : 0;
-            //     };
-     
-            //     // Total over all pages
-            //     total = api
-            //         .column( 3 )
-            //         .data()
-            //         .reduce( function (a, b) {
-            //             return intVal(a) + intVal(b);
-            //         }, 0 );
-     
-            //     // Total over this page
-            //     pageTotal = api
-            //         .column( 3, { page: 'current'} )
-            //         .data()
-            //         .reduce( function (a, b) {
-            //             return intVal(a) + intVal(b);
-            //         }, 0 );
-     
-            //     // Update footer
-            //     $( api.column( 3 ).footer() ).html(
-            //         '$'+pageTotal +' ( $'+ total +' total)'
-            //     );
-            // }
-
         });
 
         table.buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)')
@@ -129,8 +95,10 @@ var VentasDatatable = function () {
         },
         {
             targets: 6,
+            order: false,
+            className: 'dt-center',
             render: function (data, type, row, meta) {
-                return `<a data-id=${data}>${data}</a>`;
+                return `<button type="button" data-id=${data} class="btn btn-success modal-ventas"><i class="fa fa-search"></i></button>`;
             }
         }
         ];
@@ -215,6 +183,21 @@ var VentasDatatable = function () {
 
         })
         $("#Balance").text(balance + " €");
+    }
+
+    const _controlModal = function () {
+        $('table .modal-ventas').click(function() {
+            const id = $(this).data('id')
+
+            $.ajax({
+                type: "GET",
+                url: `http://localhost:1498/propuestaventa/${id}`,
+                dataType: "JSON",
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+        })
     }
 
     return {
