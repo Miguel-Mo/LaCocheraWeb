@@ -9,21 +9,28 @@ var VentasDatatable = function () {
                 console.log(response);
 
                 const dataSet = new Array;
+                let balance = 0;
 
                 response.forEach(json => {
                     const fila = [
                         json.vendedor.usuario.nombre + ' ' + json.vendedor.usuario.apellidos,
                         json.cliente.nombre + ' ' + json.cliente.apellidos,
                         json.vehiculoVender.vehiculo.marca + ' ' + json.vehiculoVender.vehiculo.modelo,
-                        json.vehiculoVender.precio + ' € ',
+                        json.presupuesto + ' € ',
                         json.fechaFin,
                         json.estado,
                         json.id
                     ];
                     dataSet.push(fila)
+                    if (json.estado === "aceptada") {
+                        balance += json.presupuesto;
+                    }
+
                 });
 
+                $("#Balance").text(balance + "€");
                 _initDatatable(dataSet);
+
             }
         });
     }
@@ -46,14 +53,47 @@ var VentasDatatable = function () {
                 info: "Mostrando página _PAGE_ de _PAGES_",
                 infoEmpty: "No se han encontrado datos",
                 infoFiltered: "(filtrados de _MAX_ resultados totales)",
-                search:"Buscar:",
+                search: "Buscar:",
                 paginate: {
-                    first:      "Primera",
-                    last:       "Última",
-                    next:       "Siguiente",
-                    previous:   "Anterior"
+                    first: "Primera",
+                    last: "Última",
+                    next: "Siguiente",
+                    previous: "Anterior"
                 },
-            }
+            },
+            // footerCallback: function ( row, data, start, end, display ) {
+            //     var api = this.api(), data;
+     
+            //     // Remove the formatting to get integer data for summation
+            //     var intVal = function ( i ) {
+            //         return typeof i === 'string' ?
+            //             i.replace(/[\$,]/g, '')*1 :
+            //             typeof i === 'number' ?
+            //                 i : 0;
+            //     };
+     
+            //     // Total over all pages
+            //     total = api
+            //         .column( 3 )
+            //         .data()
+            //         .reduce( function (a, b) {
+            //             return intVal(a) + intVal(b);
+            //         }, 0 );
+     
+            //     // Total over this page
+            //     pageTotal = api
+            //         .column( 3, { page: 'current'} )
+            //         .data()
+            //         .reduce( function (a, b) {
+            //             return intVal(a) + intVal(b);
+            //         }, 0 );
+     
+            //     // Update footer
+            //     $( api.column( 3 ).footer() ).html(
+            //         '$'+pageTotal +' ( $'+ total +' total)'
+            //     );
+            // }
+
         });
 
         table.buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)')
@@ -147,6 +187,18 @@ var VentasDatatable = function () {
                         .search(this.value)
                         .draw();
                 }
+
+                let balance=0;
+
+                $("table tbody tr").each(function(index ,fila){
+                    
+                    if( $(fila).find("td:eq(5)").text()==="Aceptada"){
+                        let valor=$(fila).find("td:eq(3)").text().split(" ")[0];
+                        balance+=Number(valor);
+                    }
+
+                })
+                $("#Balance").text(balance + "€");
             });
 
         });

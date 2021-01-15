@@ -20,6 +20,7 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="listado" class="table table-bordered table-striped">
+                                        
                                         <thead>
                                             <tr>
                                                 <th>Vendedor</th>
@@ -31,12 +32,19 @@
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
+                                        <!-- <tbody></tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="3" style="text-align:right">Total:</th>
+                                                <th></th>
+                                            </tr>
+                                        </tfoot> -->
 
 
                                     </table>
                                     <div class="d-flex flex-row-reverse">
-                                        <label d-flex justify-content-end>Balance:</label>
                                         <label d-flex justify-content-end id="Balance"></label>
+                                        <label d-flex justify-content-end>Balance: </label>
                                     </div>
 
                                 </div>
