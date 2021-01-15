@@ -46,7 +46,13 @@ var VentasDatatable = function () {
                 zeroRecords: "Nada encontrado - F",
                 info: "Mostrando página _PAGE_ de _PAGES_",
                 infoEmpty: "No se han encontrado datos",
-                infoFiltered: "(filtrados de _MAX_ resultados totales)"
+                infoFiltered: "(filtrados de _MAX_ resultados totales)",
+                paginate: {
+                    first:      "Primera",
+                    last:       "Última",
+                    next:       "Siguiente",
+                    previous:   "Anterior"
+                },
             }
         }).buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)');
 
