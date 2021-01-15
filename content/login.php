@@ -4,10 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"> -->
     <script src="https://kit.fontawesome.com/11ee0df9aa.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="dist\img\AdminLTELogo.png" sizes="16x16">
 
     <link rel="stylesheet" href="../dist/css/login.css">
     <title>La Cochera</title>
@@ -28,18 +31,18 @@
                             <h6 class="msg-info">Por favor, logeate con tu cuenta</h6>
                             <!-- <h3 class="msg-info">LOGIN</h3> -->
 
-                            <div class="form-group"> 
-                                <label class="form-control-label text-muted">Usuario</label> 
-                                <input type="text" id="usuario" placeholder="Nombre de Usuario" class="form-control"> 
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Usuario</label>
+                                <input type="text" id="usuario" placeholder="Nombre de Usuario" class="form-control">
                             </div>
 
-                            <div class="form-group"> 
-                                <label class="form-control-label text-muted">Contraseña</label> 
-                                <input type="password" id="pass" placeholder="Contraseña" class="form-control"> 
+                            <div class="form-group">
+                                <label class="form-control-label text-muted">Contraseña</label>
+                                <input type="password" id="pass" placeholder="Contraseña" class="form-control">
                             </div>
 
-                            <div class="row justify-content-center my-3 px-3"> 
-                                <button class="btn-block btn-color" id="login">Login</button> 
+                            <div class="row justify-content-center my-3 px-3">
+                                <button class="btn-block btn-color" id="login">Login</button>
                             </div>
                         </div>
                     </div>
@@ -61,9 +64,9 @@
     <script src="../dist/js/login.js"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             Login.init();
-        });    
+        });
     </script>
 
 </body>
