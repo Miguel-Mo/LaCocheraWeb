@@ -1,8 +1,9 @@
-<?php
-include "../_share/header.php"; ?>
+<?php include "../_share/header.php" ?>
+
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
+        <?php $actual = 'ventas' ?>
         <?php include "../_share/topbar.php" ?>
         <?php include "../_share/sidebar.php" ?>
 
@@ -51,107 +52,108 @@ include "../_share/header.php"; ?>
             </section>
             <!-- /.content -->
         </div>
+    </div>
 
-        <?php include "../_share/script.php" ?>
+    <?php include "../_share/script.php" ?>
 
-        <!-- DataTables  & Plugins -->
-        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-        <script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-        <script src="../plugins/jszip/jszip.min.js"></script>
-        <script src="../plugins/pdfmake/pdfmake.min.js"></script>
-        <script src="../plugins/pdfmake/vfs_fonts.js"></script>
-        <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-        <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-        <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../plugins/jszip/jszip.min.js"></script>
+    <script src="../plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 
-        <!-- Page specific script -->
-        <script>
-            jQuery(document).ready(() => {
-                $.ajax({
-                    type: "GET",
-                    url: "http://localhost:1498/propuestaventa",
-                    dataType: "JSON",
-                    success: function(response) {
+    <!-- Page specific script -->
+    <script>
+        jQuery(document).ready(() => {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:1498/propuestaventa",
+                dataType: "JSON",
+                success: function(response) {
 
-                        const dataSet = new Array;
+                    const dataSet = new Array;
 
-                        response.forEach(json => {
-                            const fila = [
-                                json.vendedor.usuario.nombre + ' ' + json.vendedor.usuario.apellidos,
-                                json.cliente.nombre + ' ' + json.cliente.apellidos,
-                                json.vehiculoVender.vehiculo.marca + ' ' + json.vehiculoVender.vehiculo.modelo,
-                                json.vehiculoVender.precio + ' € ',
-                                json.fechaFin,
-                                json.estado,
-                                json.id
-                            ];
-                            dataSet.push(fila)
-                        });
+                    response.forEach(json => {
+                        const fila = [
+                            json.vendedor.usuario.nombre + ' ' + json.vendedor.usuario.apellidos,
+                            json.cliente.nombre + ' ' + json.cliente.apellidos,
+                            json.vehiculoVender.vehiculo.marca + ' ' + json.vehiculoVender.vehiculo.modelo,
+                            json.vehiculoVender.precio + ' € ',
+                            json.fechaFin,
+                            json.estado,
+                            json.id
+                        ];
+                        dataSet.push(fila)
+                    });
 
-                        const table = $("#listado").DataTable({
-                            "responsive": true,
-                            data: dataSet,
-                            "columnDefs": [{
-                                    "targets": 4,
-                                    "render": function(data, type, row, meta) {
-                                        if (row[5] === 'pendiente') return 'Sin finalizar';
+                    const table = $("#listado").DataTable({
+                        "responsive": true,
+                        data: dataSet,
+                        "columnDefs": [{
+                                "targets": 4,
+                                "render": function(data, type, row, meta) {
+                                    if (row[5] === 'pendiente') return 'Sin finalizar';
 
-                                        const d = new Date(data);
-                                        const ye = new Intl.DateTimeFormat('es', {
-                                            year: 'numeric'
-                                        }).format(d);
-                                        const mo = new Intl.DateTimeFormat('es', {
-                                            month: '2-digit'
-                                        }).format(d);
-                                        const da = new Intl.DateTimeFormat('es', {
-                                            day: '2-digit'
-                                        }).format(d);
+                                    const d = new Date(data);
+                                    const ye = new Intl.DateTimeFormat('es', {
+                                        year: 'numeric'
+                                    }).format(d);
+                                    const mo = new Intl.DateTimeFormat('es', {
+                                        month: '2-digit'
+                                    }).format(d);
+                                    const da = new Intl.DateTimeFormat('es', {
+                                        day: '2-digit'
+                                    }).format(d);
 
-                                        return `${da}/${mo}/${ye}`;
-                                    }
-                                },
-                                {
-                                    "targets": 5,
-                                    "render": function(data, type, row, meta) {
-                                        return data.charAt(0).toUpperCase() + data.slice(1);
-                                    }
-                                },
-                                {
-                                    "targets": 6,
-                                    "render": function(data, type, row, meta) {
-                                        console.log(data, type, row);
-                                        return `<a data-id=${data}>${data}</a>`;
-                                    }
+                                    return `${da}/${mo}/${ye}`;
                                 }
-                            ],
-                            "lengthChange": false,
-                            "autoWidth": false,
-                            orderCellsTop: true,
-                            fixedHeader: true,
-                            "buttons": ["copy", "csv", "excel", "pdf", "print"],
-                        }).buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)');
-
-                        $('#listado thead tr').clone(true).appendTo('#listado thead');
-                        $('#listado thead tr:eq(1) th').each(function(i) {
-                            var title = $(this).text();
-                            $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-
-                            $('input', this).on('keyup change', function() {
-                                if (table.column(i).search() !== this.value) {
-                                    table
-                                        .column(i)
-                                        .search(this.value)
-                                        .draw();
+                            },
+                            {
+                                "targets": 5,
+                                "render": function(data, type, row, meta) {
+                                    return data.charAt(0).toUpperCase() + data.slice(1);
                                 }
-                            });
+                            },
+                            {
+                                "targets": 6,
+                                "render": function(data, type, row, meta) {
+                                    console.log(data, type, row);
+                                    return `<a data-id=${data}>${data}</a>`;
+                                }
+                            }
+                        ],
+                        "lengthChange": false,
+                        "autoWidth": false,
+                        orderCellsTop: true,
+                        fixedHeader: true,
+                        "buttons": ["copy", "csv", "excel", "pdf", "print"],
+                    }).buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)');
+
+                    $('#listado thead tr').clone(true).appendTo('#listado thead');
+                    $('#listado thead tr:eq(1) th').each(function(i) {
+                        var title = $(this).text();
+                        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+                        $('input', this).on('keyup change', function() {
+                            if (table.column(i).search() !== this.value) {
+                                table
+                                    .column(i)
+                                    .search(this.value)
+                                    .draw();
+                            }
                         });
-                    }
-                });
-            })
-        </script>
+                    });
+                }
+            });
+        });
+    </script>
 </body>

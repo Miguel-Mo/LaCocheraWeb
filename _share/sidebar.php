@@ -13,7 +13,7 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">José Pérez</a>
+                <a class="d-block" id="nombre-perfil">Usuario</a>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
+                <li class="nav-item <?= $actual === 'dashboard' ? 'menu-open' : '' ?>">
                     <a href="pages/gallery.html" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -30,7 +30,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?= $actual === 'ventas' ? 'menu-open' : '' ?>">
                     <a href="content\ventas.php" class="nav-link">
                         <i class="nav-icon fas fa-dollar-sign"></i>
                         <p>
@@ -38,7 +38,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?= $actual === 'vehiculos' ? 'menu-open' : '' ?>">
                     <a href="pages/gallery.html" class="nav-link">
                         <i class="nav-icon fas fa-car"></i>
                         <p>
@@ -46,7 +46,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <?= $actual === 'empleados' ? 'menu-open' : '' ?>">
                     <a href="pages/gallery.html" class="nav-link">
                         <i class="nav-icon fas fa-user-astronaut"></i>
                         <p>

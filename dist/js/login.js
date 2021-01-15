@@ -7,13 +7,22 @@ var Login = function () {
         $login.click((e) => {
             e.preventDefault();
 
+            if (!$usuario.val() || !$pass.val()) return;
+
             $.ajax({
                 type: "POST",
                 url: 'http://localhost:1498/login',
-                dataType : 'JSONP',
-                data: { usuario : $usuario.val(), password : $pass.val() },
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify({ usuario : $usuario.val(), password : $pass.val() }),
                 success: function(response) {
-                    console.log(response);
+                    
+                    if (!response) {
+                        console.log('error');
+                        return;
+                    } 
+
+                    window.location.replace("/content/dashboard.php");
                 },
                 error: function(request,erroType,errorMessage) {
 
@@ -22,7 +31,8 @@ var Login = function () {
 
                     Swal.fire({
                         title: '¡Error!',
-                        text: errorMessage,
+                        html: `<p>Status Error: ${request.status}</p>
+                               <p>errorMessage: ${errorMessage}</p>`,
                         icon: 'error',
                         confirmButtonText: 'De acuerdo',
                         confirmButtonColor: '#2A9D8F' 
