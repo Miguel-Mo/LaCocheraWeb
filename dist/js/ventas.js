@@ -24,7 +24,6 @@ var VentasDatatable = function () {
                 });
 
                 _initDatatable(dataSet);
-                _initFilter();
             }
         });
     }
@@ -32,7 +31,7 @@ var VentasDatatable = function () {
 
     const _initDatatable = function (dataSet) {
 
-        $("#listado").DataTable({
+        const table = $("#listado").DataTable({
             data: dataSet,
             columnDefs: _columnDefs(),
             responsive: true,
@@ -54,8 +53,11 @@ var VentasDatatable = function () {
                     previous:   "Anterior"
                 },
             }
-        }).buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)');
+        });
 
+        table.buttons().container().appendTo('#listado_wrapper .col-md-6:eq(0)');
+
+        _initFilter(table);
     }
 
     const _columnDefs = function () {
@@ -93,7 +95,7 @@ var VentasDatatable = function () {
         ];
     }
 
-    const _initFilter = function () {
+    const _initFilter = function (table) {
 
         $('#listado thead tr').clone(true).appendTo('#listado thead');
         $('#listado thead tr:eq(1) th').each(function (i) {
