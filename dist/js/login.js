@@ -16,7 +16,7 @@ var Login = function () {
                     console.log(response);
                 },
                 error: function(request,erroType,errorMessage) {
-                    alert(errorMessage)
+                    alert("EY")
                 },
                 timeout: 3000
             });
