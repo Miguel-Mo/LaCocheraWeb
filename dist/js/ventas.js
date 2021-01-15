@@ -28,7 +28,7 @@ var VentasDatatable = function () {
 
                 });
 
-                $("#Balance").text(balance + "€");
+                $("#Balance").text(balance + " €");
                 _initDatatable(dataSet);
 
             }
@@ -214,7 +214,7 @@ var VentasDatatable = function () {
             }
 
         })
-        $("#Balance").text(balance + "€");
+        $("#Balance").text(balance + " €");
     }
 
     return {

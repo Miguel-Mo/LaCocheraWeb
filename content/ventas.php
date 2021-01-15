@@ -43,8 +43,8 @@
 
                                     </table>
                                     <div class="d-flex flex-row-reverse">
-                                        <label d-flex justify-content-end id="Balance"></label>
-                                        <label d-flex justify-content-end>Balance: </label>
+                                        <label class="ml-2" id="Balance"></label>
+                                        <label >Balance: </label>
                                     </div>
 
                                 </div>
