@@ -13,109 +13,154 @@
                     <!-- datos de la propuesta -->
 
                     <div class="card col-12">
-                        <div class="card-header">
+
+                        <div class="card-header col-12font-weight-bold bg-secondary">
                             Datos de la propuesta
                         </div>
-                        <div class="col">
-                            <label>Vendedor: </label>
-                        </div>
-                        <div class="col input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+
+
+                        <div class="row">
+                            <div class="col">
+                                <label>Vendedor: </label>
                             </div>
-                            <input type="email" class="form-control">
                         </div>
-
-                        <div class="col">
-                            <label>Presupuesto: </label>
-                        </div>
-                        <div class="col input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
+                        <div class="row">
+                            <div class="col input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="text" class="form-control">
                             </div>
-                            <input type="email" class="form-control">
                         </div>
 
-
-                        <div class="col">
-                            <label>Fecha de Venta: </label>
-                        </div>
-                        <div class="col input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                        <div class="row">
+                            <div class="col">
+                                <label>Fecha de Venta: </label>
                             </div>
-                            <input type="email" class="form-control">
+
+                            <div class="col">
+                                <label>Presupuesto: </label>
+                            </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="col input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
+                                </div>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- datos del vehiculo  -->
-                    <div class="card col-12">
-                        <div class="card-header">
-                            Datos del vehiculo
-                        </div>
+                </div>
+
+                <!-- datos del vehiculo  -->
+                <div class="card col-12  ">
+                    <div class="card-header font-weight-bold bg-secondary">
+                        Datos del vehiculo
+                    </div>
+
+
+                    <div class="row">
                         <div class="col">
                             <label>Vehículo: </label>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-car"></i></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
+                    </div>
 
 
+                    <div class="row">
                         <div class="col">
                             <label>Tipo de vehículo: </label>
                         </div>
+                        <div class="col">
+                            <label>Matrícula: </label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-parking"></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
 
-
-                        <div class="col">
-                            <label>Matrícula: </label>
-                        </div>
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-barcode"></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
+                    </div>
 
+
+
+                    <div class="row">
                         <div class="col">
                             <label>Concesionario: </label>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
-
                     </div>
-                    <!-- datos del cliente -->
-                    <div class="card col-12">
-                        <div class="card-header">
-                            Datos del cliente
-                        </div>
+
+                </div>
+                <!-- datos del cliente -->
+                <div class="card col-12 ">
+                    <div class="card-header font-weight-bold bg-secondary">
+                        Datos del cliente
+                    </div>
+
+                    <div class="row">
                         <div class="col">
                             <label>Cliente: </label>
                         </div>
+                    </div>
+                    <div class="row">
+
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
+                    </div>
 
 
+                    <div class="row">
                         <div class="col">
                             <label>E-mail: </label>
                         </div>
+
+                        <div class="col">
+                            <label>Teléfono: </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
@@ -124,42 +169,50 @@
                         </div>
 
 
-                        <div class="col">
-                            <label>Teléfono: </label>
-                        </div>
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-phone"></i></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="tel" class="form-control">
                         </div>
+                    </div>
+
+                    <div class="row">
+
 
                         <div class="col">
                             <label>Fecha de Registro: </label>
+
+
+                            <div class="col">
+                                <label>DNI: </label>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="row">
+
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-calendar-plus"></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="date" class="form-control">
                         </div>
 
-                        <div class="col">
-                            <label>DNI: </label>
-                        </div>
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-id-card"></i></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
-
                     </div>
+
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Aceptar</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Aceptar</button>
             </div>
         </div>
     </div>
+</div>
