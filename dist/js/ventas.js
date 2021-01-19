@@ -68,47 +68,48 @@ var VentasDatatable = function () {
     }
 
     const _columnDefs = function () {
-        return [{
-            targets: 4,
-            render: function (data, type, row, meta) {
-                if (row[5] === 'pendiente') return 'Sin finalizar';
+        return [
+            {
+                targets: 4,
+                render: function (data, type, row, meta) {
+                    if (row[5] === 'pendiente') return 'Sin finalizar';
 
-                const d = new Date(data);
-                const ye = new Intl.DateTimeFormat('es', {
-                    year: 'numeric'
-                }).format(d);
-                const mo = new Intl.DateTimeFormat('es', {
-                    month: '2-digit'
-                }).format(d);
-                const da = new Intl.DateTimeFormat('es', {
-                    day: '2-digit'
-                }).format(d);
+                    const d = new Date(data);
+                    const ye = new Intl.DateTimeFormat('es', {
+                        year: 'numeric'
+                    }).format(d);
+                    const mo = new Intl.DateTimeFormat('es', {
+                        month: '2-digit'
+                    }).format(d);
+                    const da = new Intl.DateTimeFormat('es', {
+                        day: '2-digit'
+                    }).format(d);
 
-                return `${da}/${mo}/${ye}`;
-            }
-        },
-        {
-            targets: 5,
-            render: function (data, type, row, meta) {
-                return data.charAt(0).toUpperCase() + data.slice(1);
-            }
-        },
-        {
-            targets: 6,
-            order: false,
-            className: 'dt-center',
-            render: function (data, type, row, meta) {
-                return `<button type="button" data-toggle="modal" data-target="#staticBackdrop" 
+                    return `${da}/${mo}/${ye}`;
+                }
+            },
+            {
+                targets: 5,
+                render: function (data, type, row, meta) {
+                    return data.charAt(0).toUpperCase() + data.slice(1);
+                }
+            },
+            {
+                targets: 6,
+                order: false,
+                className: 'dt-center',
+                render: function (data, type, row, meta) {
+                    return `<button type="button" data-toggle="modal" data-target="#staticBackdrop" 
                     data-id=${data} class="btn btn-success modal-ventas"><i class="fa fa-search"></i></button>`;
+                }
             }
-        }
         ];
     }
 
     const _initFilter = function (table) {
 
         $('#listado thead').append(
-        '<tr>\
+            '<tr>\
             <th></th>\
             <th></th>\
             <th></th>\
@@ -161,8 +162,7 @@ var VentasDatatable = function () {
 
             $('input', this).on('keyup change', function () {
                 if (table.column(i).search() !== this.value) {
-                    table
-                        .column(i)
+                    table.column(i)
                         .search(this.value)
                         .draw();
                 }
@@ -171,23 +171,30 @@ var VentasDatatable = function () {
 
         });
 
+        $('[type="search"]').on('input', function() {
+            _recalcularBalance();
+        });
+
     }
 
     const _recalcularBalance = function () {
-        let balance=0;
-        $("table tbody tr").each(function(index ,fila){
-                    
-            if( $(fila).find("td:eq(5)").text()==="Aceptada"){
-                let valor=$(fila).find("td:eq(3)").text().split(" ")[0];
-                balance+=Number(valor);
-            }
 
+        let balance = 0;
+
+        $("table tbody tr").each(function (index, fila) {
+
+            if ($(fila).find("td:eq(5)").text() === "Aceptada") {
+                let valor = $(fila).find("td:eq(3)").text().split(" ")[0];
+                balance += Number(valor);
+            }
+            
         })
+
         $("#Balance").text(balance + " €");
     }
 
     const _controlModal = function () {
-        $('table .modal-ventas').click(function() {
+        $('table .modal-ventas').click(function () {
             const id = $(this).data('id')
 
             $.ajax({
