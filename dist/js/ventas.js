@@ -91,7 +91,16 @@ var VentasDatatable = function () {
             {
                 targets: 5,
                 render: function (data, type, row, meta) {
-                    return data.charAt(0).toUpperCase() + data.slice(1);
+                    if (data == "pendiente") {
+                        return `<span class="badge badge-danger">Pendiente</span>`
+                    }
+                    if (data == "rechazada") {
+                        return `<span class="badge badge-warning">Rechazada</span>`
+                    }
+                    if (data == "aceptada") {
+                        return `<span class="badge badge-success">Aceptada</span>`
+                    }
+
                 }
             },
             {
@@ -109,7 +118,7 @@ var VentasDatatable = function () {
     const _initFilter = function (table) {
 
         $('#listado thead').append(
-        '<tr>\
+            '<tr>\
             <th></th>\
             <th></th>\
             <th></th>\
@@ -123,7 +132,7 @@ var VentasDatatable = function () {
 
             if (i == 6) {
                 $(this).html(
-                '<button id="reset" type="button" class="btn btn-primary">\
+                    '<button id="reset" type="button" class="btn btn-primary">\
                     <i class="fa fa-close"></i> Limpiar\
                 </button>');
                 return;
@@ -175,11 +184,11 @@ var VentasDatatable = function () {
 
         });
 
-        $('[type="search"]').on('input', function() {
+        $('[type="search"]').on('input', function () {
             _recalcularBalance();
         });
 
-        $('#reset').on('click', function() {
+        $('#reset').on('click', function () {
             $('#listado thead tr:eq(1) th input').each((index, el) => $(el).val('').trigger('change'));
             $('#listado thead tr:eq(1) th select').each((index, el) => $(el).val('Todo').trigger('change'));
 
@@ -197,7 +206,7 @@ var VentasDatatable = function () {
                 let valor = $(fila).find("td:eq(3)").text().split(" ")[0];
                 balance += Number(valor);
             }
-            
+
         })
 
         $("#Balance").text(balance + " €");
@@ -213,20 +222,20 @@ var VentasDatatable = function () {
                 dataType: "JSON",
                 success: function (response) {
                     console.log(response);
-                    $("#vendedor").val(response['vendedor']['usuario']['nombre']+" "+response['vendedor']['usuario']['apellidos']);
-                    if(response['estado']=="aceptada"){
+                    $("#vendedor").val(response['vendedor']['usuario']['nombre'] + " " + response['vendedor']['usuario']['apellidos']);
+                    if (response['estado'] == "aceptada") {
                         $("#fechaVenta").val($.datepicker.formatDate('dd M yy', new Date(response['fechaFin'])));
-                    }else{
+                    } else {
                         $("#fechaVenta").val("Venta Sin Finalizar");
                     }
-                    
+
                     $("#presupuesto").val(response['presupuesto']);
 
-                    $("#vehiculo").val(response['vehiculoVender']['vehiculo']['marca']+" "+ response['vehiculoVender']['vehiculo']['modelo']);
-                    $("#tipoVehiculo").val(response['vehiculoVender']['vehiculo']['tipo']['descripcion']);  
+                    $("#vehiculo").val(response['vehiculoVender']['vehiculo']['marca'] + " " + response['vehiculoVender']['vehiculo']['modelo']);
+                    $("#tipoVehiculo").val(response['vehiculoVender']['vehiculo']['tipo']['descripcion']);
                     $("#concesionario").val(response['vehiculoVender']['vehiculo']['concesionario']['ciudad']);
 
-                    $("#cliente").val(response['cliente']['nombre']+" "+response['cliente']['apellidos']);
+                    $("#cliente").val(response['cliente']['nombre'] + " " + response['cliente']['apellidos']);
                     $("#email").val(response['cliente']['email']);
                     $("#telefono").val(response['cliente']['telefono']);
                     $("#fechaRegistro").val($.datepicker.formatDate('dd M yy', new Date(response['cliente']['fechaRegistro'])));
