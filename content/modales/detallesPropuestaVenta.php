@@ -14,7 +14,7 @@
 
                     <div class="card col-12">
 
-                        <div class="card-header col-12font-weight-bold bg-secondary">
+                        <div class="card-header font-weight-bold bg-secondary">
                             Datos de la propuesta
                         </div>
 
@@ -29,7 +29,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                 </div>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="vendedor">
                             </div>
                         </div>
 
@@ -48,14 +48,14 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="fechaVenta">
                             </div>
 
                             <div class="col input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
                                 </div>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="presupuesto">
                             </div>
                         </div>
                     </div>
@@ -67,19 +67,18 @@
                     <div class="card-header font-weight-bold bg-secondary">
                         Datos del vehiculo
                     </div>
-
-
                     <div class="row">
                         <div class="col">
                             <label>Vehículo: </label>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-car"></i></i></span>
                             </div>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="vehiculo">
                         </div>
                     </div>
 
@@ -87,9 +86,6 @@
                     <div class="row">
                         <div class="col">
                             <label>Tipo de vehículo: </label>
-                        </div>
-                        <div class="col">
-                            <label>Matrícula: </label>
                         </div>
                     </div>
 
@@ -99,14 +95,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-parking"></i></span>
                             </div>
-                            <input type="text" class="form-control">
-                        </div>
-
-                        <div class="col input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-barcode"></i></span>
-                            </div>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="tipoVehiculo">
                         </div>
                     </div>
 
@@ -122,7 +111,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
                             </div>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="concesionario">
                         </div>
                     </div>
 
@@ -144,7 +133,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="cliente">
                         </div>
                     </div>
 
@@ -165,7 +154,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
                             </div>
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control" id="email">
                         </div>
 
 
@@ -173,7 +162,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-phone"></i></i></span>
                             </div>
-                            <input type="tel" class="form-control">
+                            <input type="tel" class="form-control" id="telefono">
                         </div>
                     </div>
 
@@ -196,14 +185,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-calendar-plus"></i></span>
                             </div>
-                            <input type="date" class="form-control">
+                            <input type="text" class="form-control" id="fechaRegistro">
                         </div>
 
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-id-card"></i></i></span>
                             </div>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="dni">
                         </div>
                     </div>
 

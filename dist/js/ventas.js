@@ -213,6 +213,24 @@ var VentasDatatable = function () {
                 dataType: "JSON",
                 success: function (response) {
                     console.log(response);
+                    $("#vendedor").val(response['vendedor']['usuario']['nombre']+" "+response['vendedor']['usuario']['apellidos']);
+                    if(response['estado']=="aceptada"){
+                        $("#fechaVenta").val($.datepicker.formatDate('dd M yy', new Date(response['fechaFin'])));
+                    }else{
+                        $("#fechaVenta").val("Venta Sin Finalizar");
+                    }
+                    
+                    $("#presupuesto").val(response['presupuesto']);
+
+                    $("#vehiculo").val(response['vehiculoVender']['vehiculo']['marca']+" "+ response['vehiculoVender']['vehiculo']['modelo']);
+                    $("#tipoVehiculo").val(response['vehiculoVender']['vehiculo']['tipo']['descripcion']);  
+                    $("#concesionario").val(response['vehiculoVender']['vehiculo']['concesionario']['ciudad']);
+
+                    $("#cliente").val(response['cliente']['nombre']+" "+response['cliente']['apellidos']);
+                    $("#email").val(response['cliente']['email']);
+                    $("#telefono").val(response['cliente']['telefono']);
+                    $("#fechaRegistro").val($.datepicker.formatDate('dd M yy', new Date(response['cliente']['fechaRegistro'])));
+                    $("#dni").val(response['cliente']['dni']);
                 }
             });
         })
