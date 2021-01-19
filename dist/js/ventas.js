@@ -221,7 +221,7 @@ var VentasDatatable = function () {
                 url: `http://localhost:1498/propuestaventa/${id}`,
                 dataType: "JSON",
                 success: function (response) {
-                    console.log(response);
+                    
                     $("#vendedor").val(response['vendedor']['usuario']['nombre'] + " " + response['vendedor']['usuario']['apellidos']);
                     if (response['estado'] == "aceptada") {
                         $("#fechaVenta").val($.datepicker.formatDate('dd M yy', new Date(response['fechaFin'])));

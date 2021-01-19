@@ -20,7 +20,13 @@ var Login = function () {
                 success: function(response) {
                     
                     if (!response) {
-                        console.log('error');
+                        Swal.fire({
+                            title: '¡Error!',
+                            html: `Fallo en el usuario o la contraseña`,
+                            icon: 'error',
+                            confirmButtonText: 'De acuerdo',
+                            confirmButtonColor: '#2A9D8F' 
+                        })
                         return;
                     } 
 
