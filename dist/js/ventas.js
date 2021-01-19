@@ -196,6 +196,19 @@ var VentasDatatable = function () {
                 dataType: "JSON",
                 success: function (response) {
                     console.log(response);
+                    $("#vendedor").val(response['vendedor']['usuario']['nombre']+" "+response['vendedor']['usuario']['apellidos']);
+                    $("#fechaVenta").val(response['fechaFin']);
+                    $("#presupuesto").val(response['presupuesto']);
+
+                    $("#vehiculo").val(response['vehiculoVender']['vehiculo']['marca']+" "+ response['vehiculoVender']['vehiculo']['modelo']);
+                    $("#tipoVehiculo").val(response['vehiculoVender']['vehiculo']['tipo']['descripcion']);  
+                    $("#concesionario").val(response['vehiculoVender']['vehiculo']['concesionario']['ciudad']);
+
+                    $("#cliente").val(response['cliente']['nombre']+" "+response['cliente']['apellidos']);
+                    $("#email").val(response['cliente']['email']);
+                    $("#telefono").val(response['cliente']['telefono']);
+                    $("#fechaRegistro").val(response['cliente']['fechaRegistro']);
+                    $("#dni").val(response['cliente']['dni']);
                 }
             });
         })
