@@ -109,7 +109,8 @@ var VentasDatatable = function () {
     const _initFilter = function (table) {
 
         $('#listado thead').append(
-            '<tr>\
+        '<tr>\
+            <th></th>\
             <th></th>\
             <th></th>\
             <th></th>\
@@ -121,7 +122,10 @@ var VentasDatatable = function () {
         $('#listado thead tr:eq(1) th').each(function (i) {
 
             if (i == 6) {
-                $(this).html('');
+                $(this).html(
+                '<button id="reset" type="button" class="btn btn-primary">\
+                    <i class="fa fa-close"></i> Limpiar\
+                </button>');
                 return;
             }
 
@@ -175,6 +179,12 @@ var VentasDatatable = function () {
             _recalcularBalance();
         });
 
+        $('#reset').on('click', function() {
+            $('#listado thead tr:eq(1) th input').each((index, el) => $(el).val('').trigger('change'));
+            $('#listado thead tr:eq(1) th select').each((index, el) => $(el).val('Todo').trigger('change'));
+
+            _recalcularBalance();
+        });
     }
 
     const _recalcularBalance = function () {
