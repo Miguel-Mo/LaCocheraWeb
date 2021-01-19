@@ -9,71 +9,68 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <!-- datos de la propuesta -->
 
-                    <div class="card col-12">
+                <!-- datos de la propuesta -->
+                <div class="card col-12 p-0">
 
-                        <div class="card-header font-weight-bold bg-secondary">
-                            Datos de la propuesta
+                    <div class="card-header font-weight-bold bg-secondary">
+                        Datos de la propuesta
+                    </div>
+
+
+                    <div class="row p-1">
+                        <div class="col">
+                            <label>Vendedor: </label>
                         </div>
-
-
-                        <div class="row">
-                            <div class="col">
-                                <label>Vendedor: </label>
+                    </div>
+                    <div class="row p-1">
+                        <div class="col input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                </div>
-                                <input type="text" class="form-control" id="vendedor">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <label>Fecha de Venta: </label>
-                            </div>
-
-                            <div class="col">
-                                <label>Presupuesto: </label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-                                </div>
-                                <input type="text" class="form-control" id="fechaVenta">
-                            </div>
-
-                            <div class="col input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
-                                </div>
-                                <input type="text" class="form-control" id="presupuesto">
-                            </div>
+                            <input type="text" class="form-control" id="vendedor">
                         </div>
                     </div>
 
+                    <div class="row p-1">
+                        <div class="col">
+                            <label>Fecha de Venta: </label>
+                        </div>
+
+                        <div class="col">
+                            <label>Presupuesto: </label>
+                        </div>
+                    </div>
+
+                    <div class="row p-1">
+                        <div class="col input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="fechaVenta">
+                        </div>
+
+                        <div class="col input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-euro-sign"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="presupuesto">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- datos del vehiculo  -->
-                <div class="card col-12  ">
+                <div class="card col-12 p-0 ">
                     <div class="card-header font-weight-bold bg-secondary">
                         Datos del vehiculo
                     </div>
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col">
                             <label>Vehículo: </label>
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-car"></i></i></span>
@@ -83,14 +80,14 @@
                     </div>
 
 
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col">
                             <label>Tipo de vehículo: </label>
                         </div>
                     </div>
 
 
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-parking"></i></span>
@@ -101,12 +98,12 @@
 
 
 
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col">
                             <label>Concesionario: </label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
@@ -116,18 +113,19 @@
                     </div>
 
                 </div>
+                
                 <!-- datos del cliente -->
-                <div class="card col-12 ">
+                <div class="card col-12 p-0">
                     <div class="card-header font-weight-bold bg-secondary">
                         Datos del cliente
                     </div>
 
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col">
                             <label>Cliente: </label>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row p-1">
 
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
@@ -138,7 +136,7 @@
                     </div>
 
 
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col">
                             <label>E-mail: </label>
                         </div>
@@ -148,7 +146,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row p-1">
 
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
@@ -166,7 +164,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row p-1">
 
 
                         <div class="col">
@@ -179,7 +177,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row p-1">
 
                         <div class="col input-group mb-3">
                             <div class="input-group-prepend">
