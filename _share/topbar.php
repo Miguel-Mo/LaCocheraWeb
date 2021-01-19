@@ -22,6 +22,27 @@
         </a>
       </li>
 
+      <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="../dist/img/profileboss.jpg" class="user-image img-circle elevation-2" alt="User Image">
+          <span class="d-none d-md-inline">Jose de la Torre</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <!-- User image -->
+          <li class="user-header bg-primary">
+            <img src="../dist/img/profileboss.jpg" class="img-circle elevation-2" alt="User Image">
+
+            <p>
+              Jose de la Torre - Web Developer
+              <small>Boss since Sept. 2019</small>
+            </p>
+          </li>
+          <!-- Menu Footer-->
+          <li class="user-footer">
+            <a href="/" class="btn btn-default btn-flat float-right">Sign out</a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
