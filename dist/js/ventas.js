@@ -204,7 +204,12 @@ var VentasDatatable = function () {
                 success: function (response) {
                     console.log(response);
                     $("#vendedor").val(response['vendedor']['usuario']['nombre']+" "+response['vendedor']['usuario']['apellidos']);
-                    $("#fechaVenta").val(response['fechaFin']);
+                    if(response['estado']=="aceptada"){
+                        $("#fechaVenta").val($.datepicker.formatDate('dd M yy', new Date(response['fechaFin'])));
+                    }else{
+                        $("#fechaVenta").val("Venta Sin Finalizar");
+                    }
+                    
                     $("#presupuesto").val(response['presupuesto']);
 
                     $("#vehiculo").val(response['vehiculoVender']['vehiculo']['marca']+" "+ response['vehiculoVender']['vehiculo']['modelo']);
@@ -214,7 +219,7 @@ var VentasDatatable = function () {
                     $("#cliente").val(response['cliente']['nombre']+" "+response['cliente']['apellidos']);
                     $("#email").val(response['cliente']['email']);
                     $("#telefono").val(response['cliente']['telefono']);
-                    $("#fechaRegistro").val(response['cliente']['fechaRegistro']);
+                    $("#fechaRegistro").val($.datepicker.formatDate('dd M yy', new Date(response['cliente']['fechaRegistro'])));
                     $("#dni").val(response['cliente']['dni']);
                 }
             });
