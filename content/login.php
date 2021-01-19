@@ -37,10 +37,10 @@
                             <h3 class="mb-5 text-center heading">La cochera</h3>
                             <h6 class="msg-info">Por favor, logeate con tu cuenta</h6>
                             <!-- <h3 class="msg-info">LOGIN</h3> -->
-                            <form>
+                            <form id="form">
                                 <div class="form-group">
                                     <label class="form-control-label text-muted">Usuario</label>
-                                    <input type="text" id="usuario" placeholder="Nombre de Usuario" class="form-control">
+                                    <input type="text" id="usuario" placeholder="Nombre de Usuario" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">

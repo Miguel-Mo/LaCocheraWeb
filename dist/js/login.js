@@ -1,13 +1,15 @@
 var Login = function () {
 
     var handler = function () {
-        const $login = $('#login'), $usuario = $('#usuario'), $pass = $('#pass');
+        const $login = $('#login'), 
+            $usuario = $('#usuario'), $pass = $('#pass'), 
+            form = document.getElementById('form');
 
 
         $login.click((e) => {
             e.preventDefault();
 
-            if (!$usuario.val() || !$pass.val()) return;
+            if (!form.reportValidity()) return;
 
             $.ajax({
                 type: "POST",
