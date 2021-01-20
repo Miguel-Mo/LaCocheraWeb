@@ -39,6 +39,7 @@ var VentasDatatable = function () {
 
         const table = $("#listado").DataTable({
             data: dataSet,
+            pageLength: 5,
             columnDefs: _columnDefs(),
             responsive: true,
             lengthChange: false,
