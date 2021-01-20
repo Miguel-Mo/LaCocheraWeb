@@ -39,6 +39,7 @@ var VentasDatatable = function () {
 
         const table = $("#listado").DataTable({
             data: dataSet,
+            pageLength: 5,
             columnDefs: _columnDefs(),
             responsive: true,
             lengthChange: false,
@@ -132,9 +133,7 @@ var VentasDatatable = function () {
 
             if (i == 6) {
                 $(this).html(
-                    '<button id="reset" type="button" class="btn btn-primary">\
-                    <i class="fa fa-close"></i> Limpiar\
-                </button>');
+                    '<button id="reset" type="button" class="btn btn-primary">Limpiar</button>');
                 return;
             }
 
