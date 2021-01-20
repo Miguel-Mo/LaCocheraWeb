@@ -183,7 +183,7 @@ var VentasDatatable = function () {
 
                     }
 
-                    _recalcularBalance();
+                    _recalcularBalance(table);
                 });
 
                 return;
@@ -198,35 +198,31 @@ var VentasDatatable = function () {
                         .search(this.value)
                         .draw();
                 }
-                _recalcularBalance();
+                _recalcularBalance(table);
             });
 
         });
 
         $('[type="search"]').on('input', function () {
-            _recalcularBalance();
+            _recalcularBalance(table);
         });
 
         $('#reset').on('click', function () {
             $('#listado thead tr:eq(1) th input').each((index, el) => $(el).val('').trigger('change'));
             $('#listado thead tr:eq(1) th select').each((index, el) => $(el).val('Todo').trigger('change'));
-
-            _recalcularBalance();
         });
     }
 
-    const _recalcularBalance = function () {
+    const _recalcularBalance = function (table) {
 
         let balance = 0;
 
-        $("table tbody tr").each(function (index, fila) {
-
-            if ($(fila).find("td:eq(5)").text() === "Aceptada") {
-                let valor = $(fila).find("td:eq(3)").text().split(" ")[0];
-                balance += Number(valor);
+        $("#listado").dataTable().api().rows({ search: "applied" }).every(function (rowIdx, tableLoop, rowLoop) {
+          const fila = this.data();
+            if (fila[5] === 'aceptada') {
+                balance += Number(fila[3].split(' ')[0]);
             }
-
-        })
+        });
 
         $("#Balance").text(balance + " €");
     }
