@@ -20,7 +20,6 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="listado" class="table table-bordered table-striped">
-                                        
                                         <thead>
                                             <tr>
                                                 <th>Vendedor</th>
@@ -32,21 +31,12 @@
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
-                                        <!-- <tbody></tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th colspan="3" style="text-align:right">Total:</th>
-                                                <th></th>
-                                            </tr>
-                                        </tfoot> -->
-
-
                                     </table>
+
                                     <div class="d-flex flex-row-reverse">
                                         <label class="ml-2" id="Balance"></label>
                                         <label >Balance: </label>
                                     </div>
-
                                 </div>
                                 <!-- /.card-body -->
                             </div>

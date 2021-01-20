@@ -48,7 +48,7 @@ var VentasDatatable = function () {
             buttons: ["copy", "csv", "excel", "pdf", "print"],
             language: {
                 lengthMenu: "Mostrando _MENU_ filas por página",
-                zeroRecords: "Nada encontrado - F",
+                zeroRecords: "No se han encontrado datos",
                 info: "Mostrando página _PAGE_ de _PAGES_",
                 infoEmpty: "No se han encontrado datos",
                 infoFiltered: "(filtrados de _MAX_ resultados totales)",
@@ -70,7 +70,24 @@ var VentasDatatable = function () {
     const _columnDefs = function () {
         return [
             {
+                targets: 0,
+                class: 'align-middle',
+            },
+            {
+                targets: 1,
+                class: 'align-middle',
+            },
+            {
+                targets: 2,
+                class: 'align-middle',
+            },
+            {
+                targets: 3,
+                class: 'align-middle',
+            },
+            {
                 targets: 4,
+                class: 'align-middle',
                 render: function (data, type, row, meta) {
                     if (row[5] === 'pendiente') return 'Sin finalizar';
 
@@ -90,6 +107,7 @@ var VentasDatatable = function () {
             },
             {
                 targets: 5,
+                class: 'align-middle',
                 render: function (data, type, row, meta) {
                     if (data == "pendiente") {
                         return `<span class="badge badge-danger">Pendiente</span>`
@@ -132,7 +150,7 @@ var VentasDatatable = function () {
 
             if (i == 6) {
                 $(this).html(
-                    '<button id="reset" type="button" class="btn btn-primary">\
+                    '<button id="reset" type="button" class="btn btn-secondary">\
                     <i class="fa fa-close"></i> Limpiar\
                 </button>');
                 return;
