@@ -13,7 +13,7 @@
                 <img src="../dist/img/profileboss.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a class="d-block" id="nombre-perfil">José de la Torre</a>
+                <a class="d-block" id="nombre-perfil"></a>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
                         <p>Ventas</p>
                     </a>
                 </li>
-                <li class="nav-item <?= $actual === 'vehiculos' ? 'menu-open' : '' ?>">
+                <!-- <li class="nav-item <?= $actual === 'vehiculos' ? 'menu-open' : '' ?>">
                     <a href="\content\vehiculos.php" class="nav-link">
                         <i class="nav-icon fas fa-car"></i>
                         <p>Vehículos</p>
@@ -42,7 +42,7 @@
                         <i class="nav-icon fas fa-user-astronaut"></i>
                         <p>Empleados</p>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </div>

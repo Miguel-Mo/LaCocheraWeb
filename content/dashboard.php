@@ -18,9 +18,6 @@
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -104,15 +101,6 @@
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
-                                <!-- <div class="col-sm-3 col-6">
-                                    <div class="description-block border-right">
-                                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                                        <h5 class="description-header">$24,813.53</h5>
-                                        <span class="description-text">Numero de coches vendidos</span>
-                                    </div>
-                                   
-                                </div> -->
-                                <!-- /.col -->
                                 <div class="col-sm-4 col-6">
                                     <div class="description-block">
                                         <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
@@ -140,9 +128,6 @@
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -169,36 +154,6 @@
                             </div>
                             <!-- /.row -->
                         </div>
-                        <!-- /.card-body -->
-                        <!-- <div class="card-footer bg-light p-0">
-                            <ul class="nav nav-pills flex-column">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        United States of America
-                                        <span class="float-right text-danger">
-                                            <i class="fas fa-arrow-down text-sm"></i>
-                                            12%</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        India
-                                        <span class="float-right text-success">
-                                            <i class="fas fa-arrow-up text-sm"></i> 4%
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        China
-                                        <span class="float-right text-warning">
-                                            <i class="fas fa-arrow-left text-sm"></i> 0%
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div> -->
-
                     </div>
                 </div>
                 <div class="col m-1">
@@ -209,9 +164,6 @@
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                     <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
                                 </button>
                             </div>
                         </div>
@@ -260,17 +212,19 @@
                                             </td>
                                             <td><span class="badge badge-warning">Pendiente</span></td>
                                         </tr>
+                                        <tr>
+                                            <td>19/01/2021</td>
+                                            <td>Citroen</td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#00a65a" data-height="20">C-5</div>
+                                            </td>
+                                            <td><span class="badge badge-warning">Pendiente</span></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <!-- /.table-responsive -->
                         </div>
-                        <!-- /.card-body -->
-                        <!-- <div class="card-footer clearfix">
-                            <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                            <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-                        </div> -->
-                        <!-- /.card-footer -->
                     </div>
                 </div>
             </div>

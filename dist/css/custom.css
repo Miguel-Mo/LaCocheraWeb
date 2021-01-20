@@ -12,6 +12,10 @@
     color: #2a9d8f;
 }
 
+.form-control:focus {
+    border-color: #2a9d8f;
+}
+
 .page-link:hover {
     color: #379287;
 }
@@ -43,9 +47,24 @@
     flex-direction: row;
     justify-content: right;
     align-items: center;
+    margin-top: 5px;
+    color: #505658;
+}
+
+#listado_filter label input {
+    width: 40%;
+    margin-left: 10px;
 }
 
 td.dt-center {
     display: flex;
     justify-content: center;
+}
+
+thead tr {
+    color: #505658;
+}
+
+tbody tr {
+    color: #525353;
 }
