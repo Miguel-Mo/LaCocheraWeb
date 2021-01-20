@@ -176,7 +176,7 @@
                                             <th>Fecha de Inicio</th>
                                             <th>Marca</th>
                                             <th>Modelo</th>
-                                            <th>Status</th>
+                                            <th>Estado</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -249,6 +249,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../dist/js/pages/dashboard2.js"></script>
+    <script src="../dist/js/dashboard.js"></script>
 
 </body>

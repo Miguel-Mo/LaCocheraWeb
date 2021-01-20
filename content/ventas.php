@@ -32,11 +32,6 @@
                                             </tr>
                                         </thead>
                                     </table>
-
-                                    <div class="d-flex flex-row-reverse">
-                                        <label class="ml-2" id="Balance"></label>
-                                        <label >Balance: </label>
-                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
@@ -45,6 +40,62 @@
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-danger"><i class="fas fa-ban"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Rechazadas</span>
+                                    <span class="info-box-number" id="rechazadas">#</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Pendientes</span>
+                                    <span class="info-box-number" id="pendientes">#</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-success"><i class="far fa-check-circle"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Aceptadas</span>
+                                    <span class="info-box-number" id="aceptadas">#</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        
+
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-info"><i class="fas fa-euro-sign"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Balance</span>
+                                    <span class="info-box-number" id="balance">#</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
             </section>

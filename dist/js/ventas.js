@@ -1,5 +1,8 @@
 var VentasDatatable = function () {
 
+
+    let balanceTotal = 0, aceptadasTotal = 0, pendientesTotal = 0, rechazadasTotal = 0;
+
     const _init = function () {
         $.ajax({
             type: "GET",
@@ -8,7 +11,6 @@ var VentasDatatable = function () {
             success: function (response) {
 
                 const dataSet = new Array;
-                let balance = 0;
 
                 response.forEach(json => {
                     const fila = [
@@ -21,13 +23,20 @@ var VentasDatatable = function () {
                         json.id
                     ];
                     dataSet.push(fila)
+
                     if (json.estado === "aceptada") {
-                        balance += json.presupuesto;
-                    }
+                        balanceTotal += json.presupuesto;
+                        aceptadasTotal++;
+                    } else if (json.estado === "pendiente") pendientesTotal++;
+                    else rechazadasTotal++;
 
                 });
 
-                $("#Balance").text(balance + " €");
+                $("#balance").text(balanceTotal + " €");
+                $("#aceptadas").text(aceptadasTotal);
+                $("#pendientes").text(pendientesTotal);
+                $("#rechazadas").text(rechazadasTotal);
+
                 _initDatatable(dataSet);
                 _controlModal();
             }
@@ -111,10 +120,10 @@ var VentasDatatable = function () {
                 class: 'align-middle',
                 render: function (data, type, row, meta) {
                     if (data == "pendiente") {
-                        return `<span class="badge badge-danger">Pendiente</span>`
+                        return `<span class="badge badge-warning">Pendiente</span>`
                     }
                     if (data == "rechazada") {
-                        return `<span class="badge badge-warning">Rechazada</span>`
+                        return `<span class="badge badge-danger">Rechazada</span>`
                     }
                     if (data == "aceptada") {
                         return `<span class="badge badge-success">Aceptada</span>`
@@ -213,18 +222,27 @@ var VentasDatatable = function () {
         });
     }
 
-    const _recalcularBalance = function (table) {
+    const _recalcularBalance = function () {
 
-        let balance = 0;
+        let balance = 0, aceptadas = 0, rechazadas = 0, pendientes = 0;
 
         $("#listado").dataTable().api().rows({ search: "applied" }).every(function (rowIdx, tableLoop, rowLoop) {
           const fila = this.data();
             if (fila[5] === 'aceptada') {
                 balance += Number(fila[3].split(' ')[0]);
-            }
+                aceptadas++;
+            } else if (fila[5] === "pendiente") {
+                pendientes++;
+            } else {
+                rechazadas++;
+            } 
         });
 
-        $("#Balance").text(balance + " €");
+        
+        $("#balance").text(balance + " €");
+        $("#aceptadas").text(aceptadas);
+        $("#pendientes").text(pendientes);
+        $("#rechazadas").text(rechazadas);
     }
 
     const _controlModal = function () {
