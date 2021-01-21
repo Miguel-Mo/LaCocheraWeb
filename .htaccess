@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^dashboard content/dashboard.php [NC,L]
+RewriteRule ^ventas  content/ventas.php [NC,L]

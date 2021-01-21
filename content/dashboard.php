@@ -25,7 +25,7 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <p class="text-center">
-                                        <strong>Sales: 1 Jul, 2020 - 21 Jan, 2021</strong>
+                                        <strong>Ventas: 1 Jul, 2020 - 21 Ene, 2021</strong>
                                     </p>
 
                                     <div class="chart">
@@ -85,8 +85,7 @@
                             <div class="row">
                                 <div class="col-sm-4 col-6">
                                     <div class="description-block border-right">
-                                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                                        <h5 class="description-header">$35,210.43</h5>
+                                        <h5 class="description-header" id="total">#</h5>
                                         <span class="description-text">Total Ingresado</span>
                                     </div>
                                     <!-- /.description-block -->
@@ -94,18 +93,16 @@
                                 <!-- /.col -->
                                 <div class="col-sm-4 col-6">
                                     <div class="description-block border-right">
-                                        <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                                        <h5 class="description-header">$10,390.90</h5>
-                                        <span class="description-text">Numero de Reparaciones</span>
+                                        <h5 class="description-header" id="num-reparaciones">#</h5>
+                                        <span class="description-text">En proceso</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4 col-6">
                                     <div class="description-block">
-                                        <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                                        <h5 class="description-header">1200</h5>
-                                        <span class="description-text">Numero de coches vendidos </span>
+                                        <h5 class="description-header" id="num-ventas">#</h5>
+                                        <span class="description-text">Número de coches vendidos </span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
@@ -142,12 +139,12 @@
                                 <!-- /.col -->
                                 <div class="col-md-4">
                                     <ul class="chart-legend clearfix">
-                                        <li><i class="far fa-circle text-danger"></i> Mercedes</li>
-                                        <li><i class="far fa-circle text-success"></i> Jeep</li>
-                                        <li><i class="far fa-circle text-warning"></i> Kia</li>
-                                        <li><i class="far fa-circle text-info"></i> Lexus</li>
-                                        <li><i class="far fa-circle text-primary"></i> Toyota</li>
-                                        <li><i class="far fa-circle text-secondary"></i> Renault</li>
+                                        <li><i class="far fa-circle text-danger"></i> <span id="donut-0">Mercedes</span></li>
+                                        <li><i class="far fa-circle text-success"></i> <span id="donut-1">Jeep</span></li>
+                                        <li><i class="far fa-circle text-warning"></i> <span id="donut-2">Kia</span></li>
+                                        <li><i class="far fa-circle text-info"></i> <span id="donut-3">Lexus</span></li>
+                                        <li><i class="far fa-circle text-primary"></i> <span id="donut-4">Toyota</span></li>
+                                        <li><i class="far fa-circle text-secondary"></i> <span id="donut-5">Renault</span></li>
                                     </ul>
                                 </div>
                                 <!-- /.col -->
