@@ -28,4 +28,6 @@
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
   <!-- favicon -->
   <link rel="icon" type="image/png" href="..\dist\img\AdminLTELogo.png" sizes="16x16">
+  <!-- css -->
+  <link rel="stylesheet" href="../dist/css/general.css">
 </head>

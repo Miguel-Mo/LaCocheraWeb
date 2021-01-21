@@ -20,7 +20,7 @@
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="listado" class="table table-bordered table-striped">
-                                        
+
                                         <thead>
                                             <tr>
                                                 <th>Vendedor</th>
@@ -44,7 +44,7 @@
                                     </table>
                                     <div class="d-flex flex-row-reverse">
                                         <label class="ml-2" id="Balance"></label>
-                                        <label >Balance: </label>
+                                        <label>Balance: </label>
                                     </div>
 
                                 </div>
