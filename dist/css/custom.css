@@ -1,0 +1,82 @@
+
+[class*="sidebar-dark-"], .bg-primary {
+    background-color: #264653 !important;
+}
+
+.page-item.active .page-link {
+    background-color: #2a9d8f;
+    border-color: #319c90;
+}
+
+.page-link {
+    color: #2a9d8f;
+}
+
+.form-control:focus {
+    border-color: #2a9d8f;
+}
+
+.page-link:hover {
+    color: #379287;
+}
+
+.page-link:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #26465325;
+}
+
+.btn.btn-secondary{
+    color: #264653;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.btn.btn-secondary:hover:active {
+    color: #32525f;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+#listado_wrapper .row:first-child {
+    margin-bottom: 1em;
+}
+
+#listado_filter label {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-top: 5px;
+    color: #505658;
+}
+
+#listado_filter label input {
+    width: 40%;
+    margin-left: 10px;
+}
+
+td.dt-center {
+    display: flex;
+    justify-content: center;
+}
+
+thead tr {
+    color: #505658;
+}
+
+tbody tr {
+    color: #525353;
+}
+
+.brand-link .brand-text {
+    margin-left: 8px;
+}
+
+.brand-link .brand-image {
+    margin-left: 20px;
+}
+
+.bg-secondary {
+    background-color: #2a9d8f !important;
+}

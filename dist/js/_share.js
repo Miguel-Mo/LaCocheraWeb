@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
     $.ajax({
@@ -7,7 +5,6 @@ $(document).ready(function () {
         url: `http://localhost:1498/usuario/1`,
         dataType: "JSON",
         success: function (response) {
-            console.log(response);
 
             const nombreCompleto = response.nombre + ' ' + response.apellidos;
 

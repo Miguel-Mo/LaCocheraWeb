@@ -13,25 +13,25 @@
                 <img src="../dist/img/profileboss.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a class="d-block" id="nombre-perfil">José de la Torre</a>
+                <a class="d-block" id="nombre-perfil"></a>
             </div>
         </div>
 
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item <?= $actual === 'dashboard' ? 'menu-open' : '' ?>">
-                    <a href="\content\dashboard.php" class="nav-link">
+                    <a href="\dashboard" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboards</p>
                     </a>
                 </li>
                 <li class="nav-item <?= $actual === 'ventas' ? 'menu-open' : '' ?>">
-                    <a href="\content\ventas.php" class="nav-link">
+                    <a href="\ventas" class="nav-link">
                         <i class="nav-icon fas fa-dollar-sign"></i>
                         <p>Ventas</p>
                     </a>
                 </li>
-                <li class="nav-item <?= $actual === 'vehiculos' ? 'menu-open' : '' ?>">
+                <!-- <li class="nav-item <?= $actual === 'vehiculos' ? 'menu-open' : '' ?>">
                     <a href="\content\vehiculos.php" class="nav-link">
                         <i class="nav-icon fas fa-car"></i>
                         <p>Vehículos</p>
@@ -42,7 +42,7 @@
                         <i class="nav-icon fas fa-user-astronaut"></i>
                         <p>Empleados</p>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </div>

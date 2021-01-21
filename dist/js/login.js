@@ -30,7 +30,7 @@ var Login = function () {
                         return;
                     } 
 
-                    window.location.replace("/content/dashboard.php");
+                    window.location.replace("/dashboard");
                 },
                 error: function(request,erroType,errorMessage) {
 

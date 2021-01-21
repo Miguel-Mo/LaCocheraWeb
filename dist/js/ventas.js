@@ -1,5 +1,8 @@
 var VentasDatatable = function () {
 
+
+    let balanceTotal = 0, aceptadasTotal = 0, pendientesTotal = 0, rechazadasTotal = 0;
+
     const _init = function () {
         $.ajax({
             type: "GET",
@@ -8,7 +11,6 @@ var VentasDatatable = function () {
             success: function (response) {
 
                 const dataSet = new Array;
-                let balance = 0;
 
                 response.forEach(json => {
                     const fila = [
@@ -21,13 +23,20 @@ var VentasDatatable = function () {
                         json.id
                     ];
                     dataSet.push(fila)
+
                     if (json.estado === "aceptada") {
-                        balance += json.presupuesto;
-                    }
+                        balanceTotal += json.presupuesto;
+                        aceptadasTotal++;
+                    } else if (json.estado === "pendiente") pendientesTotal++;
+                    else rechazadasTotal++;
 
                 });
 
-                $("#Balance").text(balance + " €");
+                $("#balance").text(balanceTotal + " €");
+                $("#aceptadas").text(aceptadasTotal);
+                $("#pendientes").text(pendientesTotal);
+                $("#rechazadas").text(rechazadasTotal);
+
                 _initDatatable(dataSet);
                 _controlModal();
             }
@@ -49,11 +58,11 @@ var VentasDatatable = function () {
             buttons: ["copy", "csv", "excel", "pdf", "print"],
             language: {
                 lengthMenu: "Mostrando _MENU_ filas por página",
-                zeroRecords: "Nada encontrado - F",
+                zeroRecords: "No se han encontrado datos",
                 info: "Mostrando página _PAGE_ de _PAGES_",
                 infoEmpty: "No se han encontrado datos",
                 infoFiltered: "(filtrados de _MAX_ resultados totales)",
-                search: "Buscar:",
+                search: "Buscar :",
                 paginate: {
                     first: "Primera",
                     last: "Última",
@@ -71,7 +80,24 @@ var VentasDatatable = function () {
     const _columnDefs = function () {
         return [
             {
+                targets: 0,
+                class: 'align-middle',
+            },
+            {
+                targets: 1,
+                class: 'align-middle',
+            },
+            {
+                targets: 2,
+                class: 'align-middle',
+            },
+            {
+                targets: 3,
+                class: 'align-middle',
+            },
+            {
                 targets: 4,
+                class: 'align-middle',
                 render: function (data, type, row, meta) {
                     if (row[5] === 'pendiente') return 'Sin finalizar';
 
@@ -91,12 +117,13 @@ var VentasDatatable = function () {
             },
             {
                 targets: 5,
+                class: 'align-middle',
                 render: function (data, type, row, meta) {
                     if (data == "pendiente") {
-                        return `<span class="badge badge-danger">Pendiente</span>`
+                        return `<span class="badge badge-warning">Pendiente</span>`
                     }
                     if (data == "rechazada") {
-                        return `<span class="badge badge-warning">Rechazada</span>`
+                        return `<span class="badge badge-danger">Rechazada</span>`
                     }
                     if (data == "aceptada") {
                         return `<span class="badge badge-success">Aceptada</span>`
@@ -133,7 +160,9 @@ var VentasDatatable = function () {
 
             if (i == 6) {
                 $(this).html(
-                    '<button id="reset" type="button" class="btn btn-primary">Limpiar</button>');
+                    '<button id="reset" type="button" class="btn btn-secondary">\
+                    <i class="fa fa-close"></i> Limpiar\
+                </button>');
                 return;
             }
 
@@ -163,7 +192,7 @@ var VentasDatatable = function () {
 
                     }
 
-                    _recalcularBalance();
+                    _recalcularBalance(table);
                 });
 
                 return;
@@ -178,37 +207,42 @@ var VentasDatatable = function () {
                         .search(this.value)
                         .draw();
                 }
-                _recalcularBalance();
+                _recalcularBalance(table);
             });
 
         });
 
         $('[type="search"]').on('input', function () {
-            _recalcularBalance();
+            _recalcularBalance(table);
         });
 
         $('#reset').on('click', function () {
             $('#listado thead tr:eq(1) th input').each((index, el) => $(el).val('').trigger('change'));
             $('#listado thead tr:eq(1) th select').each((index, el) => $(el).val('Todo').trigger('change'));
-
-            _recalcularBalance();
         });
     }
 
     const _recalcularBalance = function () {
 
-        let balance = 0;
+        let balance = 0, aceptadas = 0, rechazadas = 0, pendientes = 0;
 
-        $("table tbody tr").each(function (index, fila) {
+        $("#listado").dataTable().api().rows({ search: "applied" }).every(function (rowIdx, tableLoop, rowLoop) {
+          const fila = this.data();
+            if (fila[5] === 'aceptada') {
+                balance += Number(fila[3].split(' ')[0]);
+                aceptadas++;
+            } else if (fila[5] === "pendiente") {
+                pendientes++;
+            } else {
+                rechazadas++;
+            } 
+        });
 
-            if ($(fila).find("td:eq(5)").text() === "Aceptada") {
-                let valor = $(fila).find("td:eq(3)").text().split(" ")[0];
-                balance += Number(valor);
-            }
-
-        })
-
-        $("#Balance").text(balance + " €");
+        
+        $("#balance").text(balance + " €");
+        $("#aceptadas").text(aceptadas);
+        $("#pendientes").text(pendientes);
+        $("#rechazadas").text(rechazadas);
     }
 
     const _controlModal = function () {
